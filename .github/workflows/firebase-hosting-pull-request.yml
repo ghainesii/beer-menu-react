@@ -9,11 +9,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        env:
+          REACT_APP_UNTAPPD_API_KEY: "${{ secrets.REACT_APP_UNTAPPD_API_KEY }}"
       - run: npm ci && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_BEER_MENU_12141 }}"
           projectId: beer-menu-12141
-        env:
-          REACT_APP_UNTAPPD_API_KEY: "${{ secrets.REACT_APP_UNTAPPD_API_KEY }}"

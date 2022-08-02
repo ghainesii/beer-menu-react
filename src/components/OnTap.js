@@ -38,7 +38,8 @@ export const OnTap = () => {
 
   return (
     <div className="row mb-2">
-      {beers && beers.map(({ beer }) => <OnTapCard beer={beer} />)}
+      {beers &&
+        beers.map(({ beer }) => <OnTapCard key={beer.bid} beer={beer} />)}
     </div>
   );
 };

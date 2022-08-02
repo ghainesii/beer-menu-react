@@ -3,7 +3,7 @@ import React from "react";
 export const OnTapCard = ({ beer }) => {
   const RESIDENT_STATE = "IL";
   return (
-    <div key={beer.bid} className="col-md-6 col-xl-4">
+    <div className="col-md-6 col-xl-4">
       <div className="card mb-4">
         <div className="brewery-image">
           {beer.beer_label_hd && (
